@@ -10,6 +10,7 @@
 #define	PIN_BUTTON	(0)
 
 
+
 //=====================================
 // Initialize LED
 //=====================================
@@ -47,6 +48,7 @@ int get_button_status()
 {
 	int button_status = digitalRead(PIN_BUTTON);
     if(button_status == 0) { // If button is pushed
+        //Serial.print("FizzBuzz\n");
         return  1;
     }
     else {
@@ -63,6 +65,8 @@ void setup()
     init_led();
     // Initialize button
     init_button();
+
+  Serial.begin(115200);
 }
 
 //=====================================
@@ -78,4 +82,3 @@ void loop()
     }
         
 }
-
